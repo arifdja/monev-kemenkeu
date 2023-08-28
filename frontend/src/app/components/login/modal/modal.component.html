@@ -1,0 +1,38 @@
+<div class="modal show" data-show = "true" id="modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Pemberitahuan</h6>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            (click)="closeModal()"
+          >
+            <span aria-hidden="false">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">
+            Sehubungan dengan rencana pengembangan aplikasi monev kemenkeu
+            mohon kesediaan Bapak/Ibu untuk meluangkan waktu mengisi survey
+            pada tautan berikut
+            <a href="https://forms.office.com/r/J6TrLu8A3h" target="_blank"
+              >Survey Pengembangan Aplikasi Monev Kemenkeu</a
+            >
+          </p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary"
+            data-dismiss="modal"
+            (click)="closeModal()"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

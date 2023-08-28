@@ -1,0 +1,153 @@
+<div class="login-box">
+  <div class="card">
+    <div  class="ribbon-wrapper">
+      <div style="background-color: #58aaf1 !important" class="ribbon bg-primary">Omnibus</div>
+    </div>
+
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">
+        <img
+          src="../../../assets/img/monevkemenkeu.png"
+          alt="MONEV KEMENKEU"
+          style="width: 100%"
+        />
+      </p>
+      <form
+        action="https://monev.kemenkeu.go.id/user/validateUser"
+        autocomplete="off"
+        method="post"
+        accept-charset="utf-8"
+      >
+        <input
+          type="hidden"
+          name="csrf_test_name"
+          value="3fb5d181b4dfcf0e27d166a06b2c2b2a"
+        />
+        <div class="input-group mb-3">
+          <p class="text-sm font-italic text-center">
+            <strong>
+              Aplikasi Monev Kemenkeu merupakan tindak lanjut PMK 62 Tahun 2023</strong
+            >
+          </p>
+          <input
+            autofocus
+            autocomplete="off"
+            type="text"
+            name="username"
+            value=""
+            class="form-control"
+            placeholder="Username"
+          />
+          <div class="input-group-append input-group-sm">
+            <div class="input-group-text input-group-sm">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="input-group mb-3">
+          <input
+            autocomplete="off"
+            id="password"
+            name="password"
+            value=""
+            type="password"
+            class="form-control"
+            placeholder="Password"
+          />
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+        <!-- <div class="form-group">
+                        <select name="ta" class="form-control">
+                          <option value="2021">2021</option>
+                          <option value="2022" selected>2022</option>
+                        </select>
+                      </div> -->
+        <div class="form-check text-sm" style="margin-bottom: 1rem">
+          <input  type="checkbox" [checked] = false class="form-check-input" name="password" id="check" #password (change)= "onItemChange($event)"  />
+          <label class="form-check-label" for="exampleCheck2"
+            >Tampilkan Password</label
+          >
+        </div>
+        <div style="margin: 0 auto; margin-top: 10px">
+          <p style="text-align: center; font-size: 25px">
+            10 - 20 =
+            <input
+              style="width: 70px; font-size: 25px"
+              type="number"
+              name="answer"
+            />
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block btn-sm"
+              style="background-color: #58aaf1 !important"
+            >
+              Login
+            </button>
+          </div>
+          <!-- /.col -->
+        </div>
+        <div class="row" style="margin-top: 5px;">
+          <div class="col-12">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block btn-sm"
+              style="background-color: #58aaf1 !important"
+            >
+              Login KemenkeuID
+            </button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+      <p
+        class="text-center"
+        style="padding-top: 10px; font-size: 12px; margin-bottom: 0px"
+      >
+        <strong
+          ><a href="https://monev.kemenkeu.go.id/user/formresetjendela"
+            >Reset Password melalui e-Mail</a
+          >
+        </strong>
+      </p>
+      <p class="text-center" style="padding-top: 10px; font-size: 12px">
+        <strong
+          ><a
+            target="_blank"
+            href="https://monev.kemenkeu.go.id/doc/ResetPasswordSMART2021.pdf"
+            >Formulir Reset Password</a
+          >
+        </strong>
+      </p>
+      <p class="text-center text-sm">
+        SAPA ANGGARAN <br />
+        WA <a href="https://wa.me/+628118300931">+628118300931</a><br />
+        <a href="https://sapa-anggaran.kemenkeu.go.id"
+          >https://sapa-anggaran.kemenkeu.go.id</a
+        >
+      </p>
+      <p class="text-center" style="padding-top: 10px; font-size: 12px">
+        <strong>Copyright &copy; 2023 <a href="#">DSP DJA KEMENKEU</a> </strong>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<button [swal]="peringatan">popUp</button>
+<button [swal]="informasi">popUp</button>
+<swal
+#tes title= "Oops! dr html" text="warning">
+</swal>
+<button [swal]="tes">te</button>
+
+<router-outlet></router-outlet>
