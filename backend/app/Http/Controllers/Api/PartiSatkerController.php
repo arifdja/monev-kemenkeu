@@ -11,7 +11,7 @@ class PartiSatkerController extends Controller
 {
     public function index()
     {
-        $data = PartiSatker::all();
+        $data = PartiSatker::find(5);
         return new PartiSatkerResource(true,'list data nka',$data);
     }
 
