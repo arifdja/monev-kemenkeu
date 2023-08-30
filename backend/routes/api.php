@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PartiSatkerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,38 +16,18 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-
-
-
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-// Route::post('/login', function(Request $request) {
-//     $credentials = $request->only(['email', 'password']);
-
-//     if (!$token = auth()->attempt($credentials))
-//     {
-//         abort(401);
-//     }
-
-//     return response()->json([
-//         'data' => [
-//             'token' => $token,
-//             'token_type' => 'bearer',
-//             'expires_in' => auth()->factory()->getTTL() * 60 
-//         ]
-//     ]);
-// });
-
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::middleware(['api'])->group(function() {
-    Route::post('/login', [AuthController::class, 'login']);
-    Route::post('/register', [AuthController::class, 'register']);
     Route::get('/getaccount', [AuthController::class, 'getaccount']);
+    Route::get('/partisatker', [PartiSatkerController::class, 'index']);
+    Route::post('/getNKA', [PartiSatkerController::class, 'getNKA']);
 });
 
-Route::apiResource('/partisatker', App\Http\Controllers\Api\PartiSatkerController::class);
-
+Route::any('{any}', function(){
+    return response()->json([
+    	'status' => 'error',
+        'message' => 'Resource not found'], 404);
+})->where('any', '.*');
 
 

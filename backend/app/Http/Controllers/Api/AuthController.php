@@ -13,19 +13,21 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);//login, register methods won't go through the api guard
+        $this->middleware('auth:api', ['except' => ['login', 'register']]); //login, register methods won't go through the api guard
     }
     public function login(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'userid' => 'required',
             'password' => 'required',
         ]);
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
-        if (! $token = auth()->attempt($validator->validated())) {
+        if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -38,7 +40,7 @@ class AuthController extends Controller
             'userid' => 'required|string|between:2,100',
             'password' => 'required|string|min:6',
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
         }
 
